@@ -15,8 +15,8 @@ NVIDIA GPU miner for Linux x86_64, WSL2 and compatible HiveOS systems.
 Linux x86_64, **glibc 2.34+**, cgroup v2, and a compatible NVIDIA driver with
 `nvidia-smi` available on `PATH`. Run with `sudo`; mining workers drop privileges.
 Python and the CUDA toolkit are not required. WSL2 needs NVIDIA GPU support and
-cgroup v2. This RC includes Ampere/Ada kernels; other architectures are not yet
-supported by every algorithm.
+cgroup v2. Includes native kernels and PTX fallbacks for NVIDIA 10-50 series and compatible
+enterprise GPUs. Untested models are not performance-qualified.
 
 ## Run
 
@@ -24,7 +24,7 @@ Extract the archive, then replace `POOL:PORT` and `COIN_ADDRESS` with your pool
 and the address for the selected coin:
 
 ```bash
-tar -xzf BojaMiner_0.4.0-rc8_linux.tar.gz
+tar -xzf BojaMiner_0.4.0-rc8-source9_linux.tar.gz
 chmod +x BojaMiner
 sudo ./BojaMiner -a pearlhash --pool POOL:PORT --address COIN_ADDRESS --worker Rig1
 ```
